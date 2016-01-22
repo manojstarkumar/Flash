@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="com.nort.symc.perfengg.utils.Constants"%>
 <jsp:include page="../common.jsp"></jsp:include>
 <script>
 var currentPageNumber=1;
@@ -12,7 +13,7 @@ var currentPageNumber=1;
 			<div class="col-lg-12">
 				<h1 class="page-header">Performance Runs</h1>
 				<ol class="breadcrumb">
-					<li><i class="fa fa-dashboard"></i> <a href="/Flash">Home</a>
+					<li><i class="fa fa-dashboard"></i> <a href="<%=Constants.machineRoot %>/Flash">Home</a>
 					</li>
 					<li class="active"><i class="fa fa-edit"></i> Runs</li>
 				</ol>

@@ -2,14 +2,24 @@ package com.nort.symc.perfengg.utils;
 
 public class Constants {
 	
-	public static final String repoLocation = "C:\\Users\\MANOJKUMAR_k\\Documents\\JMXSources";
-	public static final String jenkinsHome = "http://localhost:8080/";
-	public static final String jmeterBuildJob = "JMeterExec";
-	public static final String jmeterHome = "C:\\Users\\MANOJKUMAR_k\\Documents\\Resources\\apache-jmeter-2.13";
+	public static final String repoLocation = "C:\\JMXSources";
+	/* public static final String jenkinsHome = "http://localhost:8080/";
+	 * public static final String jmeterHome = "C:\\Users\\MANOJKUMAR_k\\Documents\\Resources\\apache-jmeter-2.13";
+	 * public static final String jenkinsPhysical = "C:\\Program Files (x86)\\Jenkins";
+	 * public static final String machineRoot = "http://localhost/";
+	 * */
+	public static final String jenkinsHome = "http://10.223.19.73:8080/jenkins/";
+	public static final String machineRoot = "http://10.223.19.73/apps";
+	public static final String jmeterHome = "C:\\apache-jmeter-2.13";
 	public static final String jenkinsPhysical = "C:\\Program Files (x86)\\Jenkins";
-	public static final String reportLocation = "http://localhost:7070/jmeterResults";
+	
+	public static final String jmeterBuildJob = "JMeterExec";
+
+	public static final String reportLocation = "/jmeterResults";
 	public static final String defaultJobState = "Running";
-	public static final String reportsLink = "//localhost:7070/jmeterResults/";
+	public static final String reportsLink = "/jmeterResults/";
+	public static final String jobName = "JMeterExec";
+	public static final String rsaKey = "C:\\jenkinsRsa\\id_rsa";
 	
 	public static String getRepolocation() {
 		return repoLocation;

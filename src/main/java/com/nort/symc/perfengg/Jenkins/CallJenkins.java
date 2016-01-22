@@ -5,6 +5,7 @@ import hudson.cli.CLI;
 import java.io.File;
 import java.net.URL;
 import java.security.KeyPair;
+import java.security.PublicKey;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,20 +24,22 @@ public class CallJenkins {
 		
 
 		try {
-			System.out.println("Starting...");
 		CLI cli  = new CLI(new URL(Constants.jenkinsHome));
-    	File file = new File("C:\\Users\\MANOJKUMAR_k\\Documents\\Luna Workspace\\JellyLab\\src\\main\\resources\\id_rsa"/*classLoader.getResource("id_rsa").getFile()*/);
+		/*System.out.println("Clied.." + cli);
+    	File file = new File(Constants.rsaKeyclassLoader.getResource("id_rsa").getFile());
+    	System.out.println("File");
         KeyPair key = CLI.loadKey(file);
-        cli.authenticate(Collections.singleton(key));
-
+        System.out.println("loaded");
+        PublicKey server = cli.authenticate(Collections.singleton(key));*/
+        System.out.println("server");
         cli.upgrade();
-		
+		System.out.println("Upgraded");
 		String jMeterScript = Constants.repoLocation + File.separator +JMXFiles.valueOf(script).getJMXPath();
 
 		
 		List<String> arguments = new LinkedList<String>();
 		arguments.add("build");
-		arguments.add("JMeterExec");
+		arguments.add(Constants.jobName);
 
 		arguments.add("-p");
 		arguments.add("Script="+jMeterScript);
@@ -81,6 +84,7 @@ public class CallJenkins {
 			return null;
 		}
 		catch(Exception e) {
+			System.out.println(e);
 			e.printStackTrace();
 			return null;
 		}

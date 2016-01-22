@@ -7,7 +7,7 @@
 <jsp:include page="../common.jsp"></jsp:include>
 <div id="page-wrapper">
 	<%
-		URL u = new URL("http:" + Constants.reportsLink
+		URL u = new URL(Constants.machineRoot + Constants.reportsLink
 				+ request.getParameter("testId") + "/archive/JThreads.png");
 		HttpURLConnection huc = (HttpURLConnection) u.openConnection();
 		huc.setRequestMethod("GET");
@@ -20,7 +20,7 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
     $('#example').DataTable( {
-        "ajax": '<%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/csv.data',
+        "ajax": '<%=Constants.machineRoot%><%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/csv.data',
 		"bPaginate": false,
 		"bInfo": false
     } );
@@ -82,12 +82,12 @@
 			<div class="col-lg-6">
 				<h4>Active Threads Over Time</h4>
 				<img
-					src="<%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JThreads.png" />
+					src="<%=Constants.machineRoot%><%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JThreads.png" />
 			</div>
 			<div class="col-lg-6">
 				<h4>BytesThroughputOverTime</h4>
 				<img
-					src="<%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JBytes.png" />
+					src="<%=Constants.machineRoot%><%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JBytes.png" />
 			</div>
 		</div>
 		<!-- row -->
@@ -97,13 +97,13 @@
 			<div class="col-lg-6">
 			<h4>TransactionsPerSecond</h4>
 				<img
-					src="<%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JTransactions.png" />
+					src="<%=Constants.machineRoot%><%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JTransactions.png" />
 				
 			</div>
 			<div class="col-lg-6">
 				<h4>ResponseTimesOverTime</h4>
 				<img
-					src="<%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JResponse.png" />
+					src="<%=Constants.machineRoot%><%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JResponse.png" />
 			</div>
 		</div>
 		<!-- row -->
@@ -113,12 +113,12 @@
 			<div class="col-lg-6">
 				<h4>ThroughputVsThreads</h4>
 				<img
-					src="<%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JThroughput.png" />
+					src="<%=Constants.machineRoot%><%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JThroughput.png" />
 			</div>
 			<div class="col-lg-6">
 				<h4>TimesVsThreads</h4>
 				<img
-					src="<%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JTimes.png" />
+					src="<%=Constants.machineRoot%><%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JTimes.png" />
 			</div>
 		</div>
 		<!-- row -->
@@ -128,7 +128,7 @@
 			<div class="col-lg-6">
 				<h4>HitsPerSecond</h4>
 				<img
-					src="<%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JHits.png" />
+					src="<%=Constants.machineRoot%><%=Constants.reportsLink%><%=request.getParameter("testId")%>/archive/JHits.png" />
 			</div>
 		</div> -->
 		<!-- row -->

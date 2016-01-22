@@ -35,7 +35,7 @@ public class ScriptSubmission {
 			return mv;
 		}
 		
-		String nextBuild = ReadXML.readXmlUrlByXpath("/api/xml", "/freeStyleProject/nextBuildNumber",true);
+		int nextBuild = Integer.parseInt(ReadXML.readXmlUrlByXpath("/api/xml", "/freeStyleProject/nextBuildNumber",true));
 		mv = new ModelAndView("results");
 		mv.addObject("expectedBuild", nextBuild);
 		System.out.println("Making the call");

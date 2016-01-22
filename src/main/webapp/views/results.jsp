@@ -62,8 +62,10 @@
 				<div id="loader">
 					The test will continue to Run even after closing the browser.<br>
 					You can check the status later from <a
-						href="testStatus.mdo?testId=${expectedBuild}">http://localhost:7070/Flash/testStatus?testId=${expectedBuild}</a>
+						href='testStatus.mdo?testId=<c:out value="${expectedBuild}"></c:out>'>/apps/Flash/testStatus.mdo?testId=<c:out value="${expectedBuild}"></c:out></a>
 					<br />Running Test...<img src="img/loader.gif" />
+				</div>
+				<div id="status" class="hidden">
 				</div>
 
 				<div class="row">

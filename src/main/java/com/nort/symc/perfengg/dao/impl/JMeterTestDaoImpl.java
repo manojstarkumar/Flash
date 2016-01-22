@@ -52,16 +52,16 @@ public class JMeterTestDaoImpl implements JMeterTestRunsDao {
 		try {
 		Session session = this.sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		JMeterTestRuns testRun = session.load(JMeterTestRuns.class, buildNumber);
+		JMeterTestRuns testRun = session.load(JMeterTestRuns.class, Integer.parseInt(buildNumber));
 		String responseToReturn =  ReadXML.readXmlUrlByXpath("/"+buildNumber+"/api/xml", "/freeStyleBuild/result",true);
 		testRun.setStatus(responseToReturn);
-		String result = (String) session.save(testRun);
+		String result = String.valueOf(session.save(testRun)); //have this as a string, just incase something else has to done from here.
 		transaction.commit();
 		session.close();
 		if(result==null || result.trim().isEmpty()) return false;
 		else return true;
 		}
-		catch(ObjectNotFoundException obj) {
+		catch(Exception obj) {
 			return false;
 		}
 	}

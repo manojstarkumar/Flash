@@ -16,7 +16,7 @@ public class JMeterTestRuns implements Serializable {
 	private static final long serialVersionUID = -6400692564449759872L;
 	
 	@Id
-	public String buildNumber;
+	public int buildNumber;
 	
 	public String comment;
 	public int users;
@@ -28,7 +28,7 @@ public class JMeterTestRuns implements Serializable {
 	public JMeterTestRuns(){
 		
 	}
-	public JMeterTestRuns(String nextBuild, String comment, int users,
+	public JMeterTestRuns(int nextBuild, String comment, int users,
 			String defaultjobstate, int duration, String script,
 			String parameters) {
 		this.buildNumber = nextBuild;
@@ -40,10 +40,10 @@ public class JMeterTestRuns implements Serializable {
 		this.parameters = parameters;
 		
 	}
-	public String getBuildNumber() {
+	public int getBuildNumber() {
 		return buildNumber;
 	}
-	public void setBuildNumber(String buildNumber) {
+	public void setBuildNumber(int buildNumber) {
 		this.buildNumber = buildNumber;
 	}
 	public String getComment() {

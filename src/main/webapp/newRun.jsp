@@ -1,6 +1,7 @@
 
 <%@ page import="java.util.List"%>
 <%@ page import="com.nort.symc.perfengg.utils.JMXFiles"%>
+<%@ page import="com.nort.symc.perfengg.utils.Constants"%>
 <%@ page import="java.util.Arrays"%>
 
 <jsp:include page="common.jsp"></jsp:include>
@@ -13,7 +14,7 @@
 					Performance Runs
 				</h1>
 				<ol class="breadcrumb">
-					<li><i class="fa fa-dashboard"></i> <a href="/PerfDash">Home</a>
+					<li><i class="fa fa-dashboard"></i> <a href="<%=Constants.machineRoot %>/Flash">Home</a>
 					</li>
 					<li class="active"><i class="fa fa-edit"></i> New Run</li>
 				</ol>

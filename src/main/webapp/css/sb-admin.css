@@ -281,3 +281,8 @@ ul.alert-dropdown {
 .ribbon-green:after {
   right: 0;
 }
+
+.scroller {
+	height: 450px;
+	overflow: auto;
+}
