@@ -1,9 +1,11 @@
 package com.nort.symc.perfengg.models;
 
 import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /*@Embeddable*/
 @Entity
@@ -25,12 +27,15 @@ public class JMeterTestRuns implements Serializable {
 	public String test;
 	public String parameters;
 	
+	@Transient
+	public String dataFolder;
+	
 	public JMeterTestRuns(){
 		
 	}
 	public JMeterTestRuns(int nextBuild, String comment, int users,
 			String defaultjobstate, int duration, String script,
-			String parameters) {
+			String parameters, String dataFolder) {
 		this.buildNumber = nextBuild;
 		this.comment = comment;
 		this.users = users;
@@ -38,6 +43,7 @@ public class JMeterTestRuns implements Serializable {
 		this.duration = duration;
 		this.test = script;
 		this.parameters = parameters;
+		this.dataFolder = dataFolder;
 		
 	}
 	public int getBuildNumber() {
@@ -86,6 +92,12 @@ public class JMeterTestRuns implements Serializable {
 	@Override
 	public String toString(){
 		return this.comment+"::"+this.test+"::"+this.users+"::"+this.duration;
+	}
+	public String getDataFolder() {
+		return dataFolder;
+	}
+	public void setDataFolder(String dataFolder) {
+		this.dataFolder = dataFolder;
 	}
 
 }

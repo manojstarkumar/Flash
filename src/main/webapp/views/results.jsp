@@ -87,7 +87,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<pre>
-<div id="jenkinsOutput">Please wait while we retrieve the execution console
+<div id="jenkinsOutput" class="scroller">Please wait while we retrieve the execution console
 </div>
 </pre>
 			</div>

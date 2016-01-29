@@ -9,6 +9,7 @@
 <title>Insert</title>
 </head>
 <body>
+Custom errors here..
 <%=request.getParameter("error") %>
 <c:out value="${error }"></c:out>
 <c:if test="${error=='queueError'}">

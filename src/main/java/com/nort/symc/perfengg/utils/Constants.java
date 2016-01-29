@@ -20,6 +20,7 @@ public class Constants {
 	public static final String reportsLink = "/jmeterResults/";
 	public static final String jobName = "JMeterExec";
 	public static final String rsaKey = "C:\\jenkinsRsa\\id_rsa";
+	public static final String defaultDataFolder = "data";
 	
 	public static String getRepolocation() {
 		return repoLocation;

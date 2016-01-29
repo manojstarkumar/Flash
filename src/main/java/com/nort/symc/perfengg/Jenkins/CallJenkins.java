@@ -20,7 +20,7 @@ import com.nort.symc.perfengg.utils.JMXFiles;
 public class CallJenkins {
 	
 	@Async
-	public String runAjob(String script, int users, int duration, String mWebHost, String ssoHost, String parameters, String comment) {
+	public String runAjob(String script, int users, int duration, String mWebHost, String ssoHost, String parameters, String comment, String dataFolder) {
 		
 
 		try {
@@ -66,6 +66,8 @@ public class CallJenkins {
 		arguments.add("Comment="+comment);
 		arguments.add("-p");
 		arguments.add("TestScript="+script);
+		arguments.add("-p");
+		arguments.add("DataFolder="+Constants.repoLocation + File.separator + dataFolder);
 		
 		System.out.println(arguments);
 		

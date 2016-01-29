@@ -23,14 +23,14 @@
 		<!-- /.row -->
 		<div class="row">
 			<div class="col-lg-6">
-				<h4>Start a new Test</h4>
+				<h4>Start a new Test<span style="font-size:15px">&nbsp;&nbsp;&nbsp;(All feilds are mandatory unless marked otherwise)</span></h4> </br>
 			</div>
 		</div>
 		<!-- row -->
 		<div class="row">
 			<div class="col-lg-6">
 				<form role="form" name="scriptSelect" id="scriptSelect"
-					action="runScript.mdo" method="post">
+					action="runScript.mdo" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>Select Script</label> <select class="form-control"
 							name="script" id="scripts">
@@ -52,6 +52,12 @@
 						<p class="help-block">Duration of the test in SECONDS</p>
 					</div>
 					<div class="form-group">
+						<label>DataFile</label> (Optional)
+						<input class="form-control" type="file"
+							name="dataFile" id="dataFile">
+						<p class="help-block">Need to run the test for a specific user set? Give us a CSV.</p>
+					</div>
+					<div class="form-group">
 						<label>Comment</label> <input class="form-control" type="text"
 							name="comment" id="comment">
 						<p class="help-block">Why not say something, that'll help you
@@ -70,7 +76,7 @@
 							against</p>
 					</div>
 					<div class="form-group">
-						<label>Parameters</label>
+						<label>Parameters</label> (Optional)
 						<textarea class="form-control" name="parameters" id="parameters"
 							rows="3"></textarea>
 						<p class="help-block">Got to specify something else for your

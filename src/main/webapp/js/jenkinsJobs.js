@@ -20,7 +20,7 @@ function get_jenkins_success(expectedBuild,shouldCallAgain){
     }).responseText;
 
     $('#jenkinsOutput').text(feedback);
-    $('#jenkinsOutput').scrollTop =  $('#jenkinsOutput').scrollHeight;
+    $("#jenkinsOutput").animate({ scrollTop: $('#jenkinsOutput').prop("scrollHeight")}, 1000);
 }
 
 function get_jenkins_status(expectedBuild){
